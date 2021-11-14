@@ -44,7 +44,11 @@ async function getBackgroundImg(){
 
     // write code to fetch time from API
     
- 
+  var response= await fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata")
+    var responsejson= await response.json()
+    var date= responsejson.datetime
+    var hour= date.slice(11,13)
+
     //change the data in JSON format and store it in variable responseJSON
     
 
@@ -66,3 +70,6 @@ async function getBackgroundImg(){
     
     backgroundImg = loadImage(bg);
 }
+
+
+
